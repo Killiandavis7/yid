@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+        <title>Killo</title>
+
+        <script type="text/javascript" src="js/geturi.js"></script>
+        <script type="text/javascript">
+$(document).click(function(){
+
+ $("#insert").click(function() {
+
+var name=$("#name").val();
+var email=$("#email").val();
+var password=$("#password").val();
+var dataString="name="+name+"&email="+email+"&password="+password+"&insert=";
+if($.trim(name).length>0 & $.trim(email).length>0 & $.trim(password).length>0)
+{
+$.ajax({
+type: "GET",
+url:"http://localhost/yid/insert.php",
+data: {type:"registration", name:$("#name").val(), email:$("#email").val(), password:$("#password").val()},
+ContentType: "application/json",
+crossDomain: true,
+cache: false,
+beforeSend: function(){ $("#insert").val('Connecting...');},
+success: function(data){
+if(data=="success")
+{
+alert("inserted");
+$("#insert").val('submit');
+}
+else if(data=="error")
+{
+alert("error");
+}
+}
+});
+}return false;
+});
+});
+
+</script>
+    </head>
+    <body>
+        <div class="container text-center">
+            <h1 style="margin-bottom:20%">YAID</h1>
+
+
+
+
+             <div class="col-md-12">
+
+                 <div class="form-group">
+                     <h2 class="">Register</h2>
+                    </div>
+
+                 <div class="form-group">
+                     <hr />
+                    </div>
+
+
+
+                  <div class="form-group">
+                    <p class="text-left">Name</p>
+                   <div class="input-group">
+                      <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
+                   <input type="name" id="name" name="userName" class="form-control" placeholder="Your Name" value="" maxlength="40" />
+                      </div>
+                      <span class="text-danger"></span>
+                  </div>
+
+
+                    <div class="form-group">
+                      <p class="text-left" >Email</p>
+                     <div class="input-group">
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
+                     <input type="email" id="email" name="userEmail" class="form-control" placeholder="Your Email" value="" maxlength="40" />
+                        </div>
+                        <span class="text-danger"></span>
+                    </div>
+
+
+
+                    <div class="form-group">
+                      <p class="text-left" >Licence Grade</p>
+                     <div class="input-group">
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
+                     <input type="grade" name="userEmail" class="form-control" placeholder="Your Licence Grade" value="" maxlength="40" />
+                        </div>
+                        <span class="text-danger"></span>
+                    </div>
+
+
+                    <div class="form-group">
+                      <p class="text-left" >Referee Licence No.</p>
+                     <div class="input-group">
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
+                     <input type="licence" name="userEmail" class="form-control" placeholder="Referee Licence Number" value="" maxlength="40" />
+                        </div>
+                        <span class="text-danger"></span>
+                    </div>
+
+
+
+                    <div class="form-group">
+                      <p class="text-left">Password</p>
+                     <div class="input-group">
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                     <input type="password" id="password" value="" name="userPass" class="form-control" placeholder="Your Password" maxlength="15" />
+                        </div>
+                        <span class="text-danger"></span>
+                    </div>
+
+
+                    <div class="form-group">
+                     <hr />
+                    </div>
+
+                     <div class="form-group col-md-4 ">
+                     <button type="button" id="insert" value="Insert" class="btn btn-block btn-primary" >Register</button>
+                    </div>
+
+                    <div class="form-group">
+                     <hr />
+                    </div>
+
+                    <div class="form-group" >
+                     <b><a href="login.html" style="margin-left:10%;">Login Here...</a></b>
+                    </div>
+
+                </div>
+
+
+        </div>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+
+    </body>
+</html>

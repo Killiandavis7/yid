@@ -1,0 +1,15 @@
+#ref{
+  width: 50%;
+  margin-bottom: 10%;
+  padding: 5% 5% 5% 5% ;
+}
+.secondary {display:none;}
+select{
+  background-color:#375a7f;
+  border-radius: 2% 2% 2% 2%;
+  width: 180px;
+  height: 40px;
+  margin-bottom: 3%;
+  margin-top: 3%;
+
+}
